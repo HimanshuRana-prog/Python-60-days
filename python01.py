@@ -1,13 +1,20 @@
-
-# This code will run infinite
-user_promt = "entre the todo: "
-todos = []
+todos =[]
 
 while True:
-    todo = input(user_promt)
-    todos.append(todo)
-    print(todos)
+    user_actions = input("Type ,add ,show and exist:  ")
+
+    match user_actions:
+        case 'add':
+            todo = input("Enter a todo: ")
+            todos.append(todo)
+        case 'show':
+            print(todos)
+        case 'exist':
+            break
+print("Bye!")
+
     
+
 
     
 
