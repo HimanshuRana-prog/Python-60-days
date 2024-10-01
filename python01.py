@@ -1,6 +1,10 @@
-#Syntax from where we can import data
 # from function01 import get_todos , write_todos
 import function01
+import time
+
+
+now = time.strftime("%b/%d/%Y %H:%M:%S")
+print("It is",now)
 
 while True:
     user_actions = input("Type ,add ,edit,complete ,show and exit:  ")
@@ -20,7 +24,7 @@ while True:
         todos = function01.get_todos()
 
         
-        for index,items in enumerate(todos):
+        for index,items in enumerate(todos): #Here we use enumerate for indexing
             items = items.strip('\n')
             print(f"{index+1}:){items}")
     elif user_actions.startswith('edit'):
