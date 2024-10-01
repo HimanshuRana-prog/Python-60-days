@@ -1,13 +1,6 @@
-def get_todos(filepath):
-    with open(filepath,'r') as file_local:
-        todos_local = file_local.readlines()
-    return todos_local
-
-def write_todos(filepath,todos_arg):
-    with open(filepath,'w') as file:
-        file.writelines(todos_arg)
-
-
+#Syntax from where we can import data
+# from function01 import get_todos , write_todos
+import function01
 
 while True:
     user_actions = input("Type ,add ,edit,complete ,show and exit:  ")
@@ -16,16 +9,15 @@ while True:
     
     if user_actions.startswith('add'):
         todo = user_actions[4:] 
-        
-        todos = get_todos("todos.txt")
+        todos = function01.get_todos()
 
         todos.append(todo + '\n')
 
-        write_todos("todos.txt",todos)
+        function01.write_todos(todos)
 
     elif user_actions.startswith('show') : #  (|) bitwise and or
             
-        todos = get_todos("todos.txt")
+        todos = function01.get_todos()
 
         
         for index,items in enumerate(todos):
@@ -36,13 +28,13 @@ while True:
             number = int(int(user_actions[5:]))
             number = number - 1
 
-            todos = get_todos()
+            todos = function01.get_todos()
             
             new_todo = input("Enter new todo: ")
             todos[number] = new_todo + '\n'
 
             
-            write_todos("todos.txt",todos)
+            function01.write_todos(todos)
 
         except ValueError:
             print("Your code is not valid")
@@ -53,12 +45,12 @@ while True:
         try:
             number = int(user_actions[9:])
 
-            todos = get_todos("todos.txt")
+            todos = function01.get_todos()
             index = number - 1
             todo_to_remove = todos[index].strip('\n')
             todos.pop(index)
 
-            write_todos("todos.txt",todos)
+            function01.write_todos(todos)
 
             message = f"Todo {todo_to_remove} was removed from the list."
             print(message)
