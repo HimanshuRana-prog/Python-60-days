@@ -1,9 +1,17 @@
-import random
+# If i want to share this .py file to somone and he didn't have python then we have to covert file into .exe
+import FreeSimpleGUI as sg
 
-a = int(input("Enter the number: "))
-b = int(input("Enter the number: "))
+label01 = sg.Text("Enter Feet:")
+input01 = sg.Input()
 
-d = random.randint(a,b)
+label02 = sg.Text("Enter Inches:")
+input02 = sg.Input()
 
-print(d)
+convert_button = sg.Button("Convert")
 
+window = sg.Window("Convertor",
+                   layout = [[label01,input01],
+                                         [label02,input02],
+                                         [convert_button]])
+window.read()
+window.close()
