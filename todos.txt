@@ -4,9 +4,7 @@ R1
 M
 hlo
 hello
-hi
-buy planshelo
-newhelo
+Lowanewhelo
 Hollahlo
 example
 supraaa
