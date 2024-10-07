@@ -1,14 +1,4 @@
 Toyota SuprA
 ratatata
-R1
-M
-hlo
-hello
-Lowanewhelo
-Hollahlo
-example
-supraaa
-super
-hh
-my newest to do added
-add lastly
+gui
+Blackout
