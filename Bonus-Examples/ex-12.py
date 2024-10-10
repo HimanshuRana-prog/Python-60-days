@@ -1,8 +1,11 @@
 import streamlit as st
 from PIL import Image
 
-# Starts the camera
-camera_image = st.camera_input("Camera")
+uploaded_image = st.file_uploader("Upload Image")
+
+with st.expander("Starts Camera"):
+    # Starts the camera
+    camera_image = st.camera_input("Camera")
 
 if camera_image:
     # Create a pillow image instance 
@@ -13,3 +16,5 @@ if camera_image:
     
     # Render the grayscale image on the webpage
     st.image(gray_img)
+
+    
